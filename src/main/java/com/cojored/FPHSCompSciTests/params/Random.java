@@ -1,4 +1,4 @@
-package com.cojored.APCompSciTests.params;
+package com.cojored.FPHSCompSciTests.params;
 
 public class Random extends Value<String> {
     public final String[] array;

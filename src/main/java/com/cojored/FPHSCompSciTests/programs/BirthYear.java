@@ -1,4 +1,4 @@
-package com.cojored.APCompSciTests.programs;
+package com.cojored.FPHSCompSciTests.programs;
 
 import java.util.Scanner;
 

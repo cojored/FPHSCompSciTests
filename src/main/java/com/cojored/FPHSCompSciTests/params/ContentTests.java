@@ -1,4 +1,4 @@
-package com.cojored.APCompSciTests.params;
+package com.cojored.FPHSCompSciTests.params;
 
 import org.json.JSONObject;
 

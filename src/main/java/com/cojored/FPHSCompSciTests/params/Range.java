@@ -1,4 +1,4 @@
-package com.cojored.APCompSciTests.params;
+package com.cojored.FPHSCompSciTests.params;
 
 public class Range extends Value<Integer> {
     public final int min;

@@ -1,7 +1,7 @@
-package com.cojored.APCompSciTests;
+package com.cojored.FPHSCompSciTests;
 
-import com.cojored.APCompSciTests.params.ContentTests;
-import com.cojored.APCompSciTests.utils.CheckstyleAuditListener;
+import com.cojored.FPHSCompSciTests.params.ContentTests;
+import com.cojored.FPHSCompSciTests.utils.CheckstyleAuditListener;
 import com.puppycrawl.tools.checkstyle.Checker;
 import com.puppycrawl.tools.checkstyle.ConfigurationLoader;
 import com.puppycrawl.tools.checkstyle.PropertiesExpander;

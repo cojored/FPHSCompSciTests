@@ -1,4 +1,4 @@
-package com.cojored.APCompSciTests.params;
+package com.cojored.FPHSCompSciTests.params;
 
 public class Value<T> {
     public T value;

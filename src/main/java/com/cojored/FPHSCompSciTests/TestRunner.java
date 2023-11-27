@@ -1,9 +1,9 @@
-package com.cojored.APCompSciTests;
+package com.cojored.FPHSCompSciTests;
 
-import com.cojored.APCompSciTests.params.ContentTests;
-import com.cojored.APCompSciTests.params.Parameter;
-import com.cojored.APCompSciTests.utils.CompileJavaFile;
-import com.cojored.APCompSciTests.utils.JsonToParams;
+import com.cojored.FPHSCompSciTests.params.ContentTests;
+import com.cojored.FPHSCompSciTests.params.Parameter;
+import com.cojored.FPHSCompSciTests.utils.CompileJavaFile;
+import com.cojored.FPHSCompSciTests.utils.JsonToParams;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;

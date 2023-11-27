@@ -1,4 +1,4 @@
-package com.cojored.APCompSciTests.utils;
+package com.cojored.FPHSCompSciTests.utils;
 
 import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;

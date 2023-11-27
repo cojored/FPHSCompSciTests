@@ -1,6 +1,6 @@
-package com.cojored.APCompSciTests.utils;
+package com.cojored.FPHSCompSciTests.utils;
 
-import com.cojored.APCompSciTests.params.*;
+import com.cojored.FPHSCompSciTests.params.*;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

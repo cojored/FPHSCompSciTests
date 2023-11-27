@@ -1,4 +1,4 @@
-package com.cojored.APCompSciTests.utils;
+package com.cojored.FPHSCompSciTests.utils;
 
 import com.puppycrawl.tools.checkstyle.api.AuditEvent;
 import com.puppycrawl.tools.checkstyle.api.AuditListener;

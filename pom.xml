@@ -53,7 +53,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        com.cojored.APCompSciTests.TestRunner
+                                        com.cojored.FPHSCompSciTests.TestRunner
                                     </mainClass>
                                 </manifest>
                             </archive>
