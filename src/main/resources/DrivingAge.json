@@ -1,0 +1,49 @@
+{
+  "params": [
+    [
+      {
+        "random": [
+          "John",
+          "Bob",
+          "Mrs. Peitler"
+        ]
+      },
+      {
+        "range": {
+          "min": 5,
+          "max": 25,
+          "inclusive": true
+        }
+      }
+    ],
+    [
+      {
+        "random": [
+          "John",
+          "Bob",
+          "Mrs. Peitler"
+        ]
+      },
+      {
+        "static": -1
+      }
+    ],
+    [
+      {
+        "random": [
+          "John",
+          "Bob",
+          "Mrs. Peitler"
+        ]
+      },
+      {
+        "static": 16
+      }
+    ]
+  ],
+  "content": {
+    "hasNoAndOr": true,
+    "heading": true,
+    "conditionalFormat": true
+  }
+}

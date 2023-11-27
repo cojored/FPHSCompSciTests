@@ -1,0 +1,42 @@
+{
+  "params": [
+    [
+      {
+        "range": {
+          "min": 0,
+          "max": 100,
+          "inclusive": true
+        }
+      }
+    ],
+    [
+      {
+        "range": {
+          "min": 65,
+          "max": 100,
+          "inclusive": true
+        }
+      }
+    ],
+    [
+      {
+        "static": 4
+      }
+    ],
+    [
+      {
+        "static": 64
+      }
+    ],
+    [
+      {
+        "static": 65
+      }
+    ]
+  ],
+  "content": {
+    "hasNoAndOr": true,
+    "heading": true,
+    "conditionalFormat": true
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "params": [
+    [
+      {
+        "range": {
+          "min": 1800,
+          "max": 2030,
+          "inclusive": true
+        }
+      }
+    ],
+    [
+      {
+        "static": 1970
+      }
+    ],
+    [
+      {
+        "static": 1969
+      }
+    ],
+    [
+      {
+        "static": 1971
+      }
+    ]
+  ],
+  "content": {
+    "hasNoAndOr": true,
+    "heading": true,
+    "conditionalFormat": true
+  }
+}
