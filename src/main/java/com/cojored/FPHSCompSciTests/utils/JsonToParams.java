@@ -18,8 +18,14 @@ public class JsonToParams {
 
     public static Parameter parseParam(JSONArray obj) {
         List<Value<?>> params = new ArrayList<>();
+        String methodName = null;
+        String paramTypes = null;
         for (Object ob : obj) {
             JSONObject o = (JSONObject) ob;
+            if (o.has("methodName")) methodName = (String) o.get("methodName");
+            if (o.has("paramTypes") && !o.has("construct")) paramTypes = (String) o.get("paramTypes");
+            if (o.has("construct"))
+                params.add(new Constructor(parseParam((JSONArray) o.get("params")).setParamType((String) o.get("paramTypes")), (String) o.get("construct")));
             if (o.has("static")) params.add(new Static<>(o.get("static")));
             if (o.has("range")) {
                 JSONObject r = (JSONObject) o.get("range");
@@ -33,6 +39,6 @@ public class JsonToParams {
                 params.add(new Random(stringArr));
             }
         }
-        return new Parameter(params.toArray(new Value[0]));
+        return new Parameter(params.toArray(new Value[0]), methodName, paramTypes);
     }
 }

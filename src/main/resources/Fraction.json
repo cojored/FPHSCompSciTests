@@ -1,0 +1,272 @@
+{
+  "type": "class",
+  "constructors": [
+    [
+      {
+        "paramTypes": ""
+      }
+    ],
+    [
+      {
+        "paramTypes": "int, int"
+      },
+      {
+        "range": {
+          "min": 5,
+          "max": 25,
+          "inclusive": true
+        }
+      },
+      {
+        "range": {
+          "min": 5,
+          "max": 25,
+          "inclusive": true
+        }
+      }
+    ]
+  ],
+  "params": [
+    [
+      {
+        "methodName": "add",
+        "paramTypes": "int, int"
+      },
+      {
+        "range": {
+          "min": -50,
+          "max": 500,
+          "inclusive": true
+        }
+      },
+      {
+        "range": {
+          "min": -50,
+          "max": 500,
+          "inclusive": true
+        }
+      }
+    ],
+    [
+      {
+        "methodName": "add",
+        "paramTypes": "{class}"
+      },
+      {
+        "construct": "{class}",
+        "paramTypes": "int, int",
+        "params": [
+          {
+            "range": {
+              "min": -50,
+              "max": 500,
+              "inclusive": true
+            }
+          },
+          {
+            "range": {
+              "min": -50,
+              "max": 500,
+              "inclusive": true
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "methodName": "add",
+        "paramTypes": "{class}"
+      },
+      {
+        "construct": "{class}",
+        "paramTypes": "int, int",
+        "params": [
+          {
+            "range": {
+              "min": -50,
+              "max": -20,
+              "inclusive": true
+            }
+          },
+          {
+            "range": {
+              "min": -50,
+              "max": -20,
+              "inclusive": true
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "methodName": "add",
+        "paramTypes": "int, int"
+      },
+      {
+        "range": {
+          "min": -50,
+          "max": -20,
+          "inclusive": true
+        }
+      },
+      {
+        "range": {
+          "min": -50,
+          "max": -20,
+          "inclusive": true
+        }
+      }
+    ],
+    [
+      {
+        "methodName": "multiply",
+        "paramTypes": "int, int"
+      },
+      {
+        "range": {
+          "min": -50,
+          "max": 500,
+          "inclusive": true
+        }
+      },
+      {
+        "range": {
+          "min": -50,
+          "max": 500,
+          "inclusive": true
+        }
+      }
+    ],
+    [
+      {
+        "methodName": "multiply",
+        "paramTypes": "{class}"
+      },
+      {
+        "construct": "{class}",
+        "paramTypes": "int, int",
+        "params": [
+          {
+            "range": {
+              "min": -50,
+              "max": -20,
+              "inclusive": true
+            }
+          },
+          {
+            "range": {
+              "min": -50,
+              "max": -20,
+              "inclusive": true
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "methodName": "multiply",
+        "paramTypes": "{class}"
+      },
+      {
+        "construct": "{class}",
+        "paramTypes": "int, int",
+        "params": [
+          {
+            "range": {
+              "min": -50,
+              "max": -20,
+              "inclusive": true
+            }
+          },
+          {
+            "range": {
+              "min": -50,
+              "max": -20,
+              "inclusive": true
+            }
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "methodName": "multiply",
+        "paramTypes": "int, int"
+      },
+      {
+        "range": {
+          "min": -50,
+          "max": -20,
+          "inclusive": true
+        }
+      },
+      {
+        "range": {
+          "min": -50,
+          "max": -20,
+          "inclusive": true
+        }
+      }
+    ],
+    [
+      {
+        "methodName": "setNumerator",
+        "paramTypes": "int"
+      },
+      {
+        "range": {
+          "min": 0,
+          "max": 500,
+          "inclusive": true
+        }
+      }
+    ],
+    [
+      {
+        "methodName": "setNumerator",
+        "paramTypes": "int"
+      },
+      {
+        "range": {
+          "min": -50,
+          "max": -20,
+          "inclusive": true
+        }
+      }
+    ],
+    [
+      {
+        "methodName": "setDenominator",
+        "paramTypes": "int"
+      },
+      {
+        "range": {
+          "min": 50,
+          "max": 500,
+          "inclusive": true
+        }
+      }
+    ],
+    [
+      {
+        "methodName": "setDenominator",
+        "paramTypes": "int"
+      },
+      {
+        "range": {
+          "min": -50,
+          "max": -500,
+          "inclusive": true
+        }
+      }
+    ]
+  ],
+  "content": {
+    "hasNoAndOr": false,
+    "heading": true,
+    "conditionalFormat": true
+  }
+}

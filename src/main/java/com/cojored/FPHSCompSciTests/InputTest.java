@@ -47,7 +47,7 @@ public class InputTest {
             String inputString = param.getValue();
             byte[] input = inputString.getBytes(StandardCharsets.UTF_8);
             String testOut = getOutput(testClass, input);
-            String out = getOutput(Thread.currentThread().getContextClassLoader().loadClass("com.cojored.APCompSciTests.programs." + testClass.getName().replaceAll("_.{3}", "")), input);
+            String out = getOutput(Thread.currentThread().getContextClassLoader().loadClass("com.cojored.FPHSCompSciTests.programs." + testClass.getName().replaceAll("_.{3}", "")), input);
             assertEquals(out, testOut);
         } catch (ClassNotFoundException | NoSuchMethodException | InvocationTargetException |
                  IllegalAccessException e) {

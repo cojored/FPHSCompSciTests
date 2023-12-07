@@ -42,64 +42,68 @@ public class TestRunner {
 
         assert testJson != null;
 
-        // Param Testing Setup
-        Parameter[] arr = JsonToParams.parse((JSONArray) (testJson.get("params")));
-        InputTest.setParams(arr);
-        InputTest.setClass(c);
+        if (testJson.has("type") && testJson.get("type").equals("class")) {
+            // Class Testing Setup
+            ClassTest.setParams(JsonToParams.parse((JSONArray) (testJson.get("params"))));
+            ClassTest.setClass(c);
+            ClassTest.setConstructors(JsonToParams.parse((JSONArray) (testJson.get("constructors"))));
+        } else {
+            // Param Testing Setup
+            Parameter[] arr = JsonToParams.parse((JSONArray) (testJson.get("params")));
+            InputTest.setParams(arr);
+            InputTest.setClass(c);
+        }
 
         // File Content Testing Setup
         FileContentTest.setTests(new ContentTests((JSONObject) testJson.get("content")));
         FileContentTest.setFilePath(className + ".java");
-        Result result = runTests();
+        Result result = runTests(testJson.has("type") && testJson.get("type").equals("class"));
 
         for (Failure failure : result.getFailures()) {
             System.out.println(failure.toString() + "\n");
         }
 
-        System.out.println("Tests Run: " + result.getRunCount() + " | Tests Failed: " + result.getFailureCount() + " | Percentage Passed: " + (int) (((double) (result.getRunCount() - result.getFailureCount()) / (double) result.getRunCount()) * 100) + "%");
+        System.out.println(className + " | Tests Run: " + result.getRunCount() + " | Tests Failed: " + result.getFailureCount() + " | Percentage Passed: " + (int) (((double) (result.getRunCount() - result.getFailureCount()) / (double) result.getRunCount()) * 100) + "%");
     }
 
     public static String getTestFileClassName() {
         String currentDir = System.getProperty("user.dir");
         File folder = new File(currentDir);
         for (File f : Objects.requireNonNull(folder.listFiles())) {
-            if (f.isFile() && f.getName().matches("[A-Z].+_.{3}.java"))
-                if (loadTestJson(f.getName().replaceAll("_.{3}.java", "")) != null && hasTestMe(f.getName()))
+            if (f.isFile() && f.getName().matches("[A-Z].+.java"))
+                if (loadTestJson(f.getName().replaceAll("_.{3}", "").replaceAll(".java", "")) != null && hasTestMe(f.getName()))
                     return f.getName().replace(".java", "");
+
         }
         return null;
     }
 
     public static boolean hasTestMe(String filePath) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-            // Read the first line
             String firstLine = reader.readLine();
 
-            // Define the pattern with case-insensitive matching and ignore spaces
             Pattern pattern = Pattern.compile("\\s*//\\s*testme", Pattern.CASE_INSENSITIVE);
 
-            // Check if the first line matches the pattern
             return pattern.matcher(firstLine).matches();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private static Result runTests() {
-        return JUnitCore.runClasses(InputTest.class, FileContentTest.class);
+    private static Result runTests(boolean c) {
+        if (c) return JUnitCore.runClasses(ClassTest.class, FileContentTest.class);
+        else return JUnitCore.runClasses(InputTest.class, FileContentTest.class);
     }
 
     public static Class<?> getTestClass(String className) {
         try {
             String currentDir = System.getProperty("user.dir");
 
-            // Create a URL for the directory containing YourClass.class
             URL classUrl = new URL("file://" + currentDir + "/");
 
             if (!CompileJavaFile.compileJavaFile(className + ".java"))
                 throw new ClassNotFoundException("Class Not Found");
 
-            // Create a new class loader with the directory in the classpath
             try (URLClassLoader classLoader = new URLClassLoader(new URL[]{classUrl})) {
                 return classLoader.loadClass(className);
             } catch (IOException e) {
