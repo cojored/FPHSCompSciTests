@@ -57,7 +57,6 @@ public class ClassTest {
         for (Type t : e.getGenericParameterTypes())
             types.add(t.getTypeName());
 
-
         return String.join(", ", types);
     }
 
@@ -95,7 +94,6 @@ public class ClassTest {
             for (Method method : workingClass.getMethods()) {
                 if (method.getAnnotation(com.cojored.FPHSCompSciTests.annotations.Accessor.class) != null) {
                     ReturnValues rAccess = runMethod(method.getName(), getParamTypesString(method), true);
-
                     assertEquals(method.getName() + "(" + getParamTypesString(method) + ")", rAccess.working, rAccess.test);
                     assertEquals(method.getName() + "(" + getParamTypesString(method) + ")", rAccess.outputWorking, rAccess.outputTest);
                 }

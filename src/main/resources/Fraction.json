@@ -13,16 +13,27 @@
       {
         "range": {
           "min": 5,
-          "max": 25,
+          "max": 200,
           "inclusive": true
         }
       },
       {
         "range": {
           "min": 5,
-          "max": 25,
+          "max": 200,
           "inclusive": true
         }
+      }
+    ],
+    [
+      {
+        "paramTypes": "int, int"
+      },
+      {
+        "static": 12
+      },
+      {
+        "static": 24
       }
     ]
   ],
@@ -222,6 +233,18 @@
           "max": 500,
           "inclusive": true
         }
+      }
+    ],
+    [
+      {
+        "methodName": "square",
+        "paramTypes": ""
+      }
+    ],
+    [
+      {
+        "methodName": "simplify",
+        "paramTypes": ""
       }
     ],
     [

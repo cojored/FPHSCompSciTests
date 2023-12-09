@@ -17,6 +17,8 @@ public class Fraction {
 
     public Fraction(int n, int d) {
         numFractions++;
+        numerator = 1;
+        denominator = 1;
         setNumerator(n);
         setDenominator(d);
     }
@@ -72,6 +74,21 @@ public class Fraction {
         multiply(other.getNumerator(), other.getDenominator());
     }
 
+    @Mutator
+    public void square() {
+        multiply(this);
+    }
+
+    @Mutator
+    public void simplify() {
+        int gcf = 1;
+        for (int i = 1; i <= numerator; i++) {
+            if (numerator % i == 0 && denominator % i == 0) gcf = i;
+        }
+        numerator /= gcf;
+        denominator /= gcf;
+    }
+
     @Accessor
     public String toString() {
         return numerator + "/" + denominator;
@@ -80,9 +97,10 @@ public class Fraction {
     @Accessor
     public String mixedNumber() {
         int number = (numerator - (numerator % denominator)) / denominator;
-        Fraction fraction = new Fraction(numerator % denominator, denominator);
-        if (fraction.getNumerator() == 0) return String.valueOf(number);
-        else if (number == 0) return fraction.toString();
-        return number + " " + fraction;
+        int n = numerator % denominator;
+        if (n == 0) return String.valueOf(number);
+        else if (number == 0) return n + "/" + denominator;
+        return number + " " + n + "/" + denominator;
     }
+
 }
