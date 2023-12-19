@@ -57,6 +57,7 @@ public class TestRunner {
         // File Content Testing Setup
         FileContentTest.setTests(new ContentTests((JSONObject) testJson.get("content")));
         FileContentTest.setFilePath(className + ".java");
+        FileContentTest.setClass(c);
         Result result = runTests(testJson.has("type") && testJson.get("type").equals("class"));
 
         for (Failure failure : result.getFailures()) {

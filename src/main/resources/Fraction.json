@@ -290,6 +290,7 @@
   "content": {
     "hasNoAndOr": false,
     "heading": true,
-    "conditionalFormat": true
+    "conditionalFormat": true,
+    "privateVariables": true
   }
 }

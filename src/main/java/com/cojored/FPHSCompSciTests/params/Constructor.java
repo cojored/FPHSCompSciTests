@@ -30,4 +30,8 @@ public class Constructor extends Value<Parameter> {
         //TODO: Implement other classes
         return null;
     }
+
+    public String toString() {
+        return className + "(" + super.toString() + ")";
+    }
 }

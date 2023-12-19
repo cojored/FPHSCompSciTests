@@ -11,6 +11,8 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Collections;
@@ -25,12 +27,18 @@ public class FileContentTest {
     private static ContentTests tests;
     private static String filePath;
 
+    private static Class<?> testClass;
+
     public static void setTests(ContentTests t) {
         tests = t;
     }
 
     public static void setFilePath(String path) {
         filePath = path;
+    }
+
+    public static void setClass(Class<?> c) {
+        testClass = c;
     }
 
     @Test
@@ -79,6 +87,14 @@ public class FileContentTest {
                 assertTrue(true);
             }
         } catch (CheckstyleException ignored) {
+        }
+    }
+
+    @Test
+    public void privateVariables() {
+        assumeTrue(tests.privateVariables);
+        for (Field field : testClass.getDeclaredFields()) {
+            assertTrue("All instance variables must be private", Modifier.isPrivate(field.getModifiers()));
         }
     }
 
